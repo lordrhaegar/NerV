@@ -14,50 +14,95 @@ import Colors from "../constants/Colors";
 import Font from "../constants/Font";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../types";
-const { height } = Dimensions.get("window");
+import { MotiView } from "moti";
+import { Easing } from "react-native-reanimated";
+const { height, width } = Dimensions.get("window");
 
 type Props = NativeStackScreenProps<RootStackParamList, "Welcome">;
 
 const WelcomeScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
   return (
     <SafeAreaView>
-      <View>
+
+      <View
+        style={{
+          height: '100%',
+          justifyContent: "center",
+          alignItems: "center"
+        }}
+      >
         <ImageBackground
           style={{
-            height: height / 2.5,
+            height: 200,
+            width: width
           }}
-          resizeMode="contain"
-          source={require("../assets/images/welcome-img.png")}
+          resizeMode="cover"
+          source={require("../assets/images/NerV.png")}
         />
-        <View
-          style={{
-            paddingHorizontal: Spacing * 4,
-            paddingTop: Spacing * 4,
+        <View style={{flexDirection: 'row', width: 250, justifyContent: 'space-between'}}>
+          <MotiView
+          from={{translateX: width}}
+          animate={{translateX: 0}}
+          transition={{
+            type: 'timing',
+            duration: 500,
+            easing: Easing.linear
           }}
-        >
-          <Text
-            style={{
-              fontSize: FontSize.xxLarge,
-              color: Colors.primary,
-              fontFamily: Font["poppins-bold"],
-              textAlign: "center",
-            }}
           >
-            Discover Your Dream Job here
-          </Text>
+            <Text
+              style={{
+                fontSize: FontSize.xxLarge,
+                color: Colors.primary,
+                fontFamily: Font["poppins-bold"],
+                textAlign: "center",
+              }}
+            >
+              Talk,
+            </Text>
 
-          <Text
-            style={{
-              fontSize: FontSize.small,
-              color: Colors.text,
-              fontFamily: Font["poppins-regular"],
-              textAlign: "center",
-              marginTop: Spacing * 2,
-            }}
+          </MotiView>
+           <MotiView
+          from={{translateX: width}}
+          animate={{translateX: 0}}
+          transition={{
+            type: 'timing',
+            duration: 1000,
+            easing: Easing.linear
+          }}
           >
-            Explore all the existing job roles based or your interest and study
-            major
-          </Text>
+            <Text
+              style={{
+                fontSize: FontSize.xxLarge,
+                color: Colors.primary,
+                fontFamily: Font["poppins-bold"],
+                textAlign: "center",
+              }}
+            >
+              Heal,
+            </Text>
+
+          </MotiView>
+          <MotiView
+          from={{translateX: width}}
+          animate={{translateX: 0}}
+          transition={{
+            type: 'timing',
+            duration: 1500,
+            easing: Easing.linear
+          }}
+          >
+            <Text
+              style={{
+                fontSize: FontSize.xxLarge,
+                color: Colors.primary,
+                fontFamily: Font["poppins-bold"],
+                textAlign: "center",
+              }}
+            >
+              Thrive
+            </Text>
+
+          </MotiView>
         </View>
         <View
           style={{

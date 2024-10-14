@@ -88,6 +88,7 @@ const LoginScreen: React.FC<Props> = ({ navigation: { navigate } }) => {
             shadowOpacity: 0.3,
             shadowRadius: Spacing,
           }}
+          onPress={()=>navigate("NerV")}
         >
           <Text
             style={{
