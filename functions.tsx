@@ -1,7 +1,7 @@
 import { HfInference } from "@huggingface/inference";
 import * as FileSystem from "expo-file-system"
 import axios from 'axios'
-const apiKey = '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';
+const apiKey = '';
 const url = 'https://api.openai.com/v1/audio/speech';
 export const query = async (hf: HfInference, setBase64: Function, text: string): Promise<String> => {
     try {
@@ -27,7 +27,7 @@ export const query = async (hf: HfInference, setBase64: Function, text: string):
 
 export const convertTextToSpeech = async (textToConvert: string) => {
 
-    const apiKey = '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';
+    const apiKey = '';
 
     const requestOptions = {
         method: 'POST',
